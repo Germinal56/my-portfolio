@@ -5,7 +5,7 @@ export function buildWelcomeEmail(firstName: string) {
   const safeName = (firstName || "").trim() || "there";
   const brandLogo = process.env.BRAND_PRIMARY_WEBSITE + "\\logo.svg"  || "";
   const bookCover = process.env.BRAND_PRIMARY_WEBSITE + "\\honest-investments-cover.webp"  || "";
-  const ebookUrl = process.env.BRAND_PRIMARY_WEBSITE + "\\" + process.env.EBOOK_URL || "https://www.gianlucafornaciari.com/honest-investments-book-gf-free-ZS2J5i|.ju<1bzo\"24L96i.pdf";
+  const ebookUrl = process.env.BRAND_PRIMARY_WEBSITE + "/" + process.env.EBOOK_URL || `https://www.gianlucafornaciari.com/honest-investments-book-gf-free-ZS2J5i|.ju<1bzo-24L96i.pdf`;
   const linkedin = process.env.BRAND_PRIMARY_LINKEDIN || "#";
   const website = process.env.BRAND_PRIMARY_WEBSITE || "#";
   const x = process.env.BRAND_PRIMARY_X || "#";
