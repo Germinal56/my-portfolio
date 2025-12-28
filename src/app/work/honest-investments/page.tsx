@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import axios from "axios";
 import Image from "next/image";
 
 export default function NewsletterForm() {
@@ -35,9 +34,13 @@ export default function NewsletterForm() {
     setMessage(null);
 
     try {
-      const response = await axios.post("/api/subscribe", {
-        name: formData.name,
-        email: formData.email,
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim().toLowerCase(),
+        }),
       });
     
       if (response.status === 200) {
@@ -118,7 +121,7 @@ export default function NewsletterForm() {
             />
           </label>
           <label className="block mb-2 text-gray-600 dark:text-gray-300">
-            your best e-mail <span className="text-xs font-bold text-red-800">(to receive it in the next 24h)</span>
+            your best e-mail <span className="text-xs font-bold text-red-800">(it may take more than 3 hours to receive it)</span>
             <input
               type="email"
               name="email"
