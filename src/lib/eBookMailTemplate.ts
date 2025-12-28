@@ -47,9 +47,11 @@ export function buildWelcomeEmail(firstName: string) {
       <tr>
         <td>
           <table role="presentation" class="wrapper" width="100%" cellpadding="0" cellspacing="0">
-            <tr><td class="center" style="padding:24px 0;">
-              ${brandLogo ? `<img src="${brandLogo}" alt="Logo" width="120" height="auto" />` : ""}
-            </td></tr>
+            <tr>
+                <td align="center" style="padding:24px 0; text-align:center;">
+                  ${brandLogo ? `<img src="${brandLogo}" alt="Gianluca Fornaciari" width="120" style="display:block; margin:0 auto; max-width:100%; height:auto;" />` : ""}
+                </td>
+            </tr>
             <tr><td class="content" style="padding: 0 20px 8px; text-align:center;">
               <div class="heading">Welcome ${safeName}!!</div>
               <p>As promised, here you have my investment guide.</p>
