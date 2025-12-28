@@ -90,7 +90,7 @@ export async function POST(request: Request) {
     const { subject, text, html } = buildWelcomeEmail(normalizedName);
 
     await transporter.sendMail({
-      from: from,
+      from: `Gianluca Fornaciari <${from}>`,
       to: normalizedEmail,
       bcc: bcc || undefined,
       subject,
